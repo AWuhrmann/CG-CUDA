@@ -6,7 +6,7 @@ In the directory Release, you will find the makefile and a script for running on
 The main optimized version of the parallelized Conjugate-Gradient solver for PSD matrices is implemented in CUDA C/C++. A sequential version implemented in C is also available to compare the results of the CUDA implementation.
 
 # Implementation
-Most of the kernels have optimal intuitive implementation like the vector-vector additionkernel or the scalar-vector multiplication kernel.  These kernels will therefore not be discussedand we will focus on the 2 main kernels of this algorithm namely, the matrix-vector product and the vector-vector inner product.
+Most of the kernels have optimal intuitive implementation like the vector-vector addition kernel or the scalar-vector multiplication kernel.  These kernels will therefore not be discussed and we will focus on the 2 main kernels of this algorithm namely, the matrix-vector product and the vector-vector inner product.
 
 ## Matrix-vector product kernel
 A lot of different kernels can be written for this one seemingly simple task with coalesced memory access, usage of shared-memory and no bank conflict. The implemented version takes advantage of the fact that the system matrix A is a PSD symmetric matrix. For further description of the kernel, assume that the matrix A is of dimension SIZE x SIZE.
